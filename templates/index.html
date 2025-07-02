@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Restaurants</h1>
+<a class="btn btn-primary" href="{{ url_for('restaurants') }}">Post Restaurant</a>
+<ul class="list-group mt-3">
+  {% for r in restaurants %}
+  <li class="list-group-item"><a href="{{ url_for('restaurant_detail', restaurant_id=r.id) }}">{{ r.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ restaurant.name }}</h2>
+<p>{{ restaurant.description }}</p>
+<form method="post" action="{{ url_for('reserve', restaurant_id=restaurant.id) }}">
+  <div class="mb-3">
+    <label class="form-label">Reservation Time (YYYY-MM-DD HH:MM)</label>
+    <input class="form-control" type="text" name="time" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Reserve</button>
+</form>
+{% endblock %}
