@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Reservations</h2>
+<ul class="list-group">
+  {% for res in reservations %}
+  <li class="list-group-item">{{ res.restaurant.name }} at {{ res.time.strftime('%Y-%m-%d %H:%M') }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
